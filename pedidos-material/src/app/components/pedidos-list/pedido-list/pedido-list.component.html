@@ -1,0 +1,55 @@
+<mat-tab-group>
+  <mat-tab label="Todos ({{ contagem() }})">
+    <mat-list>
+      <mat-list-item *ngFor="let p of getPedidosPorStatus()()">
+        {{ p.codigo }} - {{ p.nome }} - R$ {{ p.valor }} ({{ p.status }})
+      </mat-list-item>
+    </mat-list>
+    <div style="margin-top: 8px; font-weight: 600;">
+      Total: R$ {{ getTotalPorStatus()() }}
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Separado ({{ contagem('Separado') }})">
+    <mat-list>
+      <mat-list-item *ngFor="let p of getPedidosPorStatus('Separado')()">
+        {{ p.codigo }} - {{ p.nome }} - R$ {{ p.valor }}
+      </mat-list-item>
+    </mat-list>
+    <div style="margin-top: 8px; font-weight: 600;">
+      Total: R$ {{ getTotalPorStatus('Separado')() }}
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Fechado ({{ contagem('Fechado') }})">
+    <mat-list>
+      <mat-list-item *ngFor="let p of getPedidosPorStatus('Fechado')()">
+        {{ p.codigo }} - {{ p.nome }} - R$ {{ p.valor }}
+      </mat-list-item>
+    </mat-list>
+    <div style="margin-top: 8px; font-weight: 600;">
+      Total: R$ {{ getTotalPorStatus('Fechado')() }}
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Cancelado ({{ contagem('Cancelado') }})">
+    <mat-list>
+      <mat-list-item *ngFor="let p of getPedidosPorStatus('Cancelado')()">
+        {{ p.codigo }} - {{ p.nome }} - R$ {{ p.valor }}
+      </mat-list-item>
+    </mat-list>
+    <div style="margin-top: 8px; font-weight: 600;">
+      Total: R$ {{ getTotalPorStatus('Cancelado')() }}
+    </div>
+  </mat-tab>
+  <mat-tab label="Entregue ({{ contagem('Entregue') }})">
+    <mat-list>
+      <mat-list-item *ngFor="let p of getPedidosPorStatus('Entregue')()">
+        {{ p.codigo }} - {{ p.nome }} - R$ {{ p.valor }}
+      </mat-list-item>
+    </mat-list>
+    <div style="margin-top: 8px; font-weight: 600;">
+      Total: R$ {{ getTotalPorStatus('Entregue')() }}
+    </div>
+  </mat-tab>
+</mat-tab-group>
